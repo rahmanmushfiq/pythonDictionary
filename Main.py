@@ -27,7 +27,8 @@ def retrieve_definition(word):
     elif word.upper() in data:
         return data[word.upper()]
     elif len(get_close_matches(word, data.keys())) > 0:
-        action = input("Did you mean %s instead? [y or n]: " % get_close_matches(word, data.keys())[0])
+        action = input("Did you mean %s instead? [y or n]: " % get_close_matches(
+            word, data.keys())[0])
         # in action is yes, retrieve the info of suggested word
         if action == "y":
             return data[get_close_matches(word, data.keys())[0]]
